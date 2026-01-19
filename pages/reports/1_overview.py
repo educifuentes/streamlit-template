@@ -8,6 +8,7 @@ st.subheader("Overview")
 
 st.markdown("Hello! este es una data app de prueba y knowledge base")
 
+st.markdown("Local version [Link](http://localhost:8501)")
 st.markdown("Deploy en [Streamlit Cloud Link](https://edu-template.streamlit.app/)")
 st.markdown("Deploy en [Render Link](https://spendee-dashboard-educifuentes.streamlit.app/)")
 st.markdown("Deploy en [Heroku Link](https://spendee-dashboard-educifuentes.streamlit.app/)")
