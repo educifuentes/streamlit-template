@@ -12,4 +12,4 @@ This app contains no complex logic; it serves as a sample for testing deployment
 - Simple Passcode protection
 - Page Structure organization
 - Google Connection setup
-- Other data connections
+- Other data connections: Supabase
