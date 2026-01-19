@@ -42,6 +42,10 @@ from src.utils import check_password
 # Authentication
 # ==========================================
 
+st.subheader("Debug info")
+st.write(st.secrets)
+st.write(st.session_state)
+
 if not check_password():
     st.stop()
 
