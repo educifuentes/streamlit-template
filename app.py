@@ -13,7 +13,7 @@ st.set_page_config(
 
 # Section - Reports
 overview_page = st.Page("pages/reports/1_overview.py", title="Overview", icon=":material/dashboard:")
-details_page = st.Page("pages/reports/2_transactions.py", title="Transactions", icon=":material/inventory_2:")
+details_page = st.Page("pages/reports/2_details.py", title="Transactions", icon=":material/inventory_2:")
 
 
 # Section - Tools
@@ -22,7 +22,7 @@ explore_page = st.Page("pages/tools/2_data_explorer.py", title="Data Explorer", 
 
 # current page
 pg = st.navigation({
-    "Reports": [overview_page, transactions_page],
+    "Reports": [overview_page, details_page],
     "Tools": [uploads_page, explore_page]
 })
 
