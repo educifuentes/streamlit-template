@@ -14,6 +14,11 @@ def check_password():
 
     def password_entered():
         """Checks whether a password entered by the user is correct."""
+        if "passcode" not in st.secrets or "password" not in st.secrets["passcode"]:
+            st.error("Passcode not configured. Please check .streamlit/secrets.toml")
+            st.session_state["password_correct"] = False
+            return
+
         if st.session_state["password"] == st.secrets["passcode"]["password"]:
             st.session_state["password_correct"] = True
             del st.session_state["password"]  # don't store password
