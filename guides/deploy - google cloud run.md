@@ -24,6 +24,43 @@ gcloud projects add-iam-policy-binding analytics-dashboard-478018 \
     --role=roles/run.builder
 
 
+## Docker Deployment Guide
+
+### 1. Build and Test Locally
+You can build the Docker image locally to verify it works.
+
+```bash
+# Build the image
+docker build -t streamlit-app .
+
+# Run the container locally
+docker run -p 8080:8080 streamlit-app
+```
+Visit http://localhost:8080 to see your app.
+
+### 2. Deploy to Google Cloud Run
+
+**Prerequisites**: Ensure you have the Google Cloud CLI (`gcloud`) installed and authenticated.
+
+```bash
+# Set your project ID
+export PROJECT_ID=your-project-id
+
+# Enable required services
+gcloud services enable cloudbuild.googleapis.com run.googleapis.com
+
+# Submit the build to Cloud Build
+gcloud builds submit --tag gcr.io/$PROJECT_ID/streamlit-app
+
+# Deploy to Cloud Run
+gcloud run deploy streamlit-app \
+  --image gcr.io/$PROJECT_ID/streamlit-app \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
+```
+
+
 
 PROJECT_NUMBER-compute@developer.gserviceaccount.com
 
